@@ -8,6 +8,7 @@ subdata <- data.frame(c(Date_and_Time,subdata))
 subdata[,1] <- as.POSIXct(subdata[,1], "%Y-%m-%d %H:%M:%S")
 
 #this plot is 4 in 1
+png(file = 'plot4.png') #the default setting of this command is height and width as 480 in pixels format
 #setting up the plot screen to accommodate 4 plots
 par(mfcol = c(2,2),mar = c(5,4,5,2))
 #top left plot
@@ -22,3 +23,4 @@ legend('topright',col = c('black', 'red', 'blue'), lty = 1, legend = c("Sub_mete
 plot(subdata$Date_and_Time,as.numeric(subdata$Voltage),type = 'l', xlab = "Datetime", ylab = "Voltage")
 #bottom right plot
 plot(subdata$Date_and_Time,as.numeric(subdata$Global_reactive_power),type = 'l', xlab = "Datetime", ylab = "Global reactive power")
+dev.off()
