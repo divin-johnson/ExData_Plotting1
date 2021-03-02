@@ -1,0 +1,9 @@
+#Reading the .txt file into R using read.delim which is used to read .txt files in R
+#the .txt file is seperated by ':'
+data <- read.delim("household_power_consumption.txt",sep = ';')
+
+#subsetting only the part of the data that  we require for this operation
+subdata <- subset(data, data$Date == "1/2/2007"|data$Date == "2/2/2007")
+
+# creating a histogram as asked in the assignment
+hist(as.numeric(subdata$Global_active_power), col = "red",xlab = "Global Active Power(kilowatts)", main = "Global Active Power")
