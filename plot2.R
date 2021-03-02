@@ -15,5 +15,7 @@ subdata <- data.frame(c(Date_and_Time,subdata))
 subdata[,1] <- as.POSIXct(subdata[,1], "%Y-%m-%d %H:%M:%S")
 
 #Plotting the 2nd plot as asked in the assignment
+png(file = 'plot1.R') #the default setting of this command is height and width as 480 in pixels format
 plot(subdata$Date_and_Time, as.numeric(subdata$Global_active_power), type = 'l',xlab = "",
      ylab = "Global Active Power(kilowatts)",main = 'Global Active Power vs. Time')
+dev.off()
