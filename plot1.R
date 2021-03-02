@@ -6,4 +6,6 @@ data <- read.delim("household_power_consumption.txt",sep = ';')
 subdata <- subset(data, data$Date == "1/2/2007"|data$Date == "2/2/2007")
 
 # creating a histogram as asked in the assignment
+png(file = 'plot1.png') #the default setting of this command is height and width as 480 in pixels format
 hist(as.numeric(subdata$Global_active_power), col = "red",xlab = "Global Active Power(kilowatts)", main = "Global Active Power")
+dev.off()
