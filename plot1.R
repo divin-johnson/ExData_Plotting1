@@ -1,5 +1,5 @@
 #Reading the .txt file into R using read.delim which is used to read .txt files in R
-#the .txt file is seperated by ':'
+#the .txt file is seperated by ';'
 data <- read.delim("household_power_consumption.txt",sep = ';')
 
 #subsetting only the part of the data that  we require for this operation
